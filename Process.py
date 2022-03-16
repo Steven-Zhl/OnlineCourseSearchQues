@@ -180,12 +180,12 @@ class Jinghuaba:
         :param html_searchResult:
         :return:
         """
-        ques_ans = None
         if isinstance(html_searchResult, str) and html_searchResult != '':
             html = BS(html_searchResult, 'html.parser')
             content = html.find('div', {'style': 'font-size: 15px;'}).contents  # 读取内容
             content = str.join('', [str(i) for i in content])  # 将其连接成字符串
-            content = [i for i in re.split('[(<p>)(</p>)(\n)]', content) if i != '']  # 格式整理
+            content = [i.encode('gbk', 'ignore').decode('gbk') for i in re.split('[(<p>)(</p>)(\n)]', content) if
+                       i != '']  # 格式整理
             ques_ans = content
         elif isinstance(html_searchResult, list):
             ques_ans = []
@@ -193,7 +193,8 @@ class Jinghuaba:
                 html = BS(htmlContent, 'html.parser')
                 content = html.find('div', {'style': 'font-size: 15px;'}).contents  # 读取内容
                 content = str.join('', [str(i) for i in content])  # 将其连接成字符串
-                content = [i for i in re.split('[(<p>)(</p>)(\n)]', content) if i != '']  # 格式整理
+                content = [i.encode('gbk', 'ignore').decode('gbk') for i in re.split('[(<p>)(</p>)(\n)]', content) if
+                           i != '']  # 格式整理
                 ques_ans.append(content)
         else:
             ques_ans = [self.searchContent, "没有找到该题"]
