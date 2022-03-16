@@ -1,27 +1,34 @@
-import Web
+import Process
 
 
-def main(searchContent):
-    # print('请选择搜索源：')
-    # print('1.精华吧')
-    # choice = eval(input())
-    # web = None
-    #
-    # if choice == 1:
-    web = Web.Jinghuaba()
-    web.html_searchPage = Web.getPageHtml(web.searchPageUrl(searchContent), decode=web.decode)  # 读取搜索页面内容
-    web.parseSearchResultUrl()  # 获取了搜索结果的url
-    # 读取每个搜索结果的内容
-    if isinstance(web.url_searchResult, str):
-        web.html_searchResult = Web.getPageHtml(web.url_searchResult, decode=web.decode)  # 读取搜索结果内容
-    elif isinstance(web.url_searchResult, list):
-        web.html_searchResult = list()
-        for url_res in web.url_searchResult:
-            web.html_searchResult.append(Web.getPageHtml(url_res, decode=web.decode))
-    web.parseQuesUrl()  # 获取题目信息
-    print(web.questionList)
+def menu():
+    print('网课搜题小工具   by Steven')
+    print('1. 搜索单个题目')
+    print('2. 整页搜题')
+    choice = input('请选择：')
+    if choice == '1':
+        quesDesc = input('请输入或粘贴题目：')
+        Process.MOOC.searchQues(self=Process.MOOC(), searchKeyword=quesDesc, show=True)  # 搜并且展示
+    elif choice == '2':
+        print('请输入页面文件的路径：')
+        pagePath = input()
+        print('请选择页面类型：')
+        print('1. 考试页面：考试页面为考试过程中通过浏览器保存的页面')
+        print('2. 分析页面：分析页面为考完后回顾题目的页面')
+        mode = input('请选择：')
+        if mode == '1':
+            mooc = Process.MOOC(path=pagePath, mode='exam')
+        elif mode == '2':
+            mooc = Process.MOOC(path=pagePath, mode='analysis')
+        else:
+            print('输入错误，请稍后再试')
+            return
+        print('正在搜索中，请稍候...')
+        mooc.getQuesList()
+        mooc.searchQues(show=True)
+    else:
+        print('您的输入有误')
 
 
 if __name__ == '__main__':
-    print('请输入搜题内容：')
-    main(input())
+    menu()
