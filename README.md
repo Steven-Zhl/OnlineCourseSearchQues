@@ -12,3 +12,5 @@
 **当保存的页面如下所示，为考试后的分析页面时，请选择“分析页面”![image](resources/IMG/readme/3-disp_exam.jpg)**
 **当保存的页面如下所示，为考试中保存的页面时，请选择“考试页面”![image](resources/IMG/readme/4-disp_analysis.jpg)**
 * 随后只要等待搜索完成即可。
+## 新增打包好的exe可执行文件
+* 下载地址：[《中国大学MOOC》搜题工具](dist/《中国大学MOOC》搜题工具.exe)，下载完即可使用，使用方式和上述相同
