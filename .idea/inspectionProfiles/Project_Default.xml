@@ -11,6 +11,7 @@
       <option name="ignoredErrors">
         <list>
           <option value="W605" />
+          <option value="E722" />
         </list>
       </option>
     </inspection_tool>
@@ -32,6 +33,7 @@
           <option value="_dict_items.*" />
           <option value="keyword" />
           <option value="bs4.element.PageElement.*" />
+          <option value="content" />
         </list>
       </option>
     </inspection_tool>

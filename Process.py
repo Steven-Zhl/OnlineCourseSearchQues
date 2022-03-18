@@ -3,7 +3,7 @@ from urllib.parse import quote  # 将中文转换为url编码
 from urllib.error import HTTPError  # Http错误类
 from urllib.request import urlopen  # 读取网页HTML内容
 from urllib.request import Request  # 发送请求
-import re
+from re import sub, split  # 正则表达式
 
 
 def getPageHtml(url, decode='utf-8', requestClose=False):
@@ -24,7 +24,6 @@ def getPageHtml(url, decode='utf-8', requestClose=False):
             content = response.read().decode(decode)
         except:
             content = response.read().decode('GB2312')
-
         if requestClose:
             response.close()  # 关闭连接(为了应对反爬虫)
         return content
@@ -61,8 +60,8 @@ class MOOC:
             if len(quesHtml.find_all(self.quesDesc[i][0])) != 0 and description == '':
                 description = ''.join([text.get_text() for text in quesHtml.find_all(self.quesDesc[i][0])][1:])
         description = description.encode('gbk', 'ignore').decode('gbk')  # 转换为gbk，使之能够兼容命令行，Mac请将gbk改成utf-8
-        description = re.sub('[\n ]', '', description)  # 去除换行符和空格
-        description = re.split('[，。？！]', description)[0]
+        description = sub('[\n ]', '', description)  # 去除换行符和空格
+        description = split('[，。？！]', description)[0]
         return description
 
     def getQuesList(self):
@@ -98,16 +97,18 @@ class MOOC:
                 searchResContent = ''
             res = web.parseQuesUrl(searchResContent)
             if show:
-                print(res[0:-1])
+                print(' '.join(res[0:-1]))
                 print('\t', res[-1])
             return res
 
         else:  # 批量搜题
             ques_ans = [self.searchQues(searchKeyword=ques) for ques in self.quesList]
             if show:
+                index = 1
                 for item in ques_ans:
-                    print(item[0:-1])
+                    print(index, ' '.join(item[0:-1]))
                     print('\t', item[-1])
+                    index += 1
 
 
 class SearchPlatform:
@@ -184,7 +185,7 @@ class Jinghuaba:
             html = BS(html_searchResult, 'html.parser')
             content = html.find('div', {'style': 'font-size: 15px;'}).contents  # 读取内容
             content = str.join('', [str(i) for i in content])  # 将其连接成字符串
-            content = [i.encode('gbk', 'ignore').decode('gbk') for i in re.split('[(<p>)(</p>)(\n)]', content) if
+            content = [i.encode('gbk', 'ignore').decode('gbk') for i in split('[(<p>)(</p>)(\n)]', content) if
                        i != '']  # 格式整理
             ques_ans = content
         elif isinstance(html_searchResult, list):
@@ -193,7 +194,7 @@ class Jinghuaba:
                 html = BS(htmlContent, 'html.parser')
                 content = html.find('div', {'style': 'font-size: 15px;'}).contents  # 读取内容
                 content = str.join('', [str(i) for i in content])  # 将其连接成字符串
-                content = [i.encode('gbk', 'ignore').decode('gbk') for i in re.split('[(<p>)(</p>)(\n)]', content) if
+                content = [i.encode('gbk', 'ignore').decode('gbk') for i in split('[(<p>)(</p>)(\n)]', content) if
                            i != '']  # 格式整理
                 ques_ans.append(content)
         else:
