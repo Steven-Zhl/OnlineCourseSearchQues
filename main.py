@@ -28,12 +28,15 @@ def menu():
             mooc = Process.MOOC(path=pagePath, mode='analysis')
         else:
             print('输入错误，请稍后再试（＞人＜；）')
+            exitInfo=input('按任意键退出...')
             return
         print('正在搜索中，请稍候(●ˇ∀ˇ●)...')
         mooc.getQuesList()
         mooc.searchQues(show=True)
     else:
         print('您的输入有误，请稍后再试（＞人＜；）')
+        exitInfo = input('按任意键退出...')
+        return
     exitInfo = input('搜索完成,按任意键退出(～￣▽￣)～')
 
 
