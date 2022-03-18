@@ -3,28 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="53aa6bda-3d60-4e43-859a-e1b6b7d7b318" name="变更" comment="update:Package files into exe">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme_IMG/1-save.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/IMG/readme/1-save.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme_IMG/2-cmd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/IMG/readme/2-cmd.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme_IMG/3-disp_analysis.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/IMG/readme/3-disp_analysis.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme_IMG/4-disp_exam.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/IMG/readme/4-disp_exam.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Readme_IMG/images.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Analysis-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/EXE-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PKG-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.pyz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/PYZ-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Tree-00.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Tree-01.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/Tree-02.toc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/base_library.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main.exe.manifest" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/main.pkg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/warn-main.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/main/xref-main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/icon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/resources/IMG/icon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.spec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647607840953</updated>
-      <workItem from="1647607843101" duration="2953000" />
+      <workItem from="1647607843101" duration="4227000" />
     </task>
     <task id="LOCAL-00001" summary="update:Package files into exe">
       <created>1647609311672</created>

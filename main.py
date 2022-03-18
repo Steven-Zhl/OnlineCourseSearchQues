@@ -3,7 +3,9 @@ import Process
 
 def menu():
     print('网课搜题小工具(/≧▽≦)/   by Steven\n')
-    print('该项目已开源，仓库地址：https://github.com/Steven-Zhl/OnlineCourseSearchQues')
+    print('该项目已开源，开源地址如下：')
+    print('Github：https://github.com/Steven-Zhl/OnlineCourseSearchQues')
+    print('Gitee：https://gitee.com/steven-zhl/online-course-search-ques')
     print('详细使用说明也可以在该链接查看')
     print('由于技术不强，整页搜题时间较长（通常半分钟，具体取决于网络情况），请耐心等待\(￣︶￣*\))')
     print('总之，祝你使用愉快  :-)\n')
