@@ -78,9 +78,14 @@ class MOOC:
         # 最后一题
         ques.append(html.find(self.quesElemName[2][0], {self.quesElemName[2][1]: self.quesElemName[2][2]}))
         # 对每个题目进行处理
-        for index in range(len(ques)):
-            quesDesc = self._getQuesDesc(ques[index])
-            self.quesList.append(quesDesc)
+        ques = [item for item in ques if item is not None]
+        if len(ques) != 0:
+            for index in range(len(ques)):
+                quesDesc = self._getQuesDesc(ques[index])
+                self.quesList.append(quesDesc)
+            return True  # 能获取到题目
+        else:
+            return False  # 无法获取到题目
 
     def showQuesList(self):
         for index in range(len(self.quesList)):
